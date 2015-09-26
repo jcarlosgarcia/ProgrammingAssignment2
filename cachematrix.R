@@ -3,6 +3,26 @@
 ## to cacheSolve. This function computes the inverse of the special "matrix"
 ## if it has not been calculated yet, or retrieves it from the cache otherwise.
 ## It assumes that the matrix supplied is always invertible
+##
+## Usage:
+## > x <- matrix(c(1,4,2,0,3,1,2,1,0), nrow=3, ncol=3)
+## > x
+## [,1] [,2] [,3]
+## [1,]    1    0    2
+## [2,]    4    3    1
+## [3,]    2    1    0
+## > myMatrix <- makeCacheMatrix(x)
+## > cacheSolve(myMatrix)
+## [,1] [,2] [,3]
+## [1,]  0.2 -0.4  1.2
+## [2,] -0.4  0.8 -1.4
+## [3,]  0.4  0.2 -0.6
+## > cacheSolve(myMatrix)
+## getting cached data
+## [,1] [,2] [,3]
+## [1,]  0.2 -0.4  1.2
+## [2,] -0.4  0.8 -1.4
+## [3,]  0.4  0.2 -0.6
 
 ## This function creates a special "matrix" object that can cache its inverse. It
 ## creates a list containing functions to get/set the matrix, and to get/set the
